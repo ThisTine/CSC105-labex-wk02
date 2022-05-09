@@ -12,7 +12,7 @@ export default class DishDetail extends React.Component {
         <Card>
           <CardImg top src={dish.image} alt={dish.name} />
           <CardBody>
-            <CardTitle>{dish.name}</CardTitle>
+            <CardTitle> <b> {dish.name} </b></CardTitle>
             <CardText>{dish.description}</CardText>
           </CardBody>
         </Card>
