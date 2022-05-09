@@ -18,12 +18,15 @@ class Main extends Component {
         dishes: DISHES,
         comments: COMMENTS,
         promotions: PROMOTIONS,
-        leaders: LEADERS
+        leaders: LEADERS,
+        selectedDish: null,
       };
+    this.onDishSelect = this.onDishSelect.bind(this)
   
   }
 
   onDishSelect(dishId) {
+      console.log(dishId)
     this.setState({ selectedDish: dishId });
   }
 
@@ -49,7 +52,7 @@ class Main extends Component {
         <Header />
         <Switch>
               <Route path='/home' component={HomePage} />
-              <Route exact path='/menu' component={() => <Menu dishes={this.state.dishes} />} />
+              <Route exact path='/menu' component={() => <Menu dishes={this.state.dishes} onClick={this.onDishSelect} selectedDish={this.state.selectedDish} />} />
               <Route exact path='/contactus' component={Contact} />
               <Redirect to="/home" />
           </Switch>
